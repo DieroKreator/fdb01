@@ -32,15 +32,42 @@ def main():
 
     match opcao:
         case "1":
-            num1 = float(input("Digite o valor do 1o número: "))
-            num2 = float(input("Digite o valor do 2o número: "))
-            print(f"Soma = {num1 + num2}")
+            somar_dois_numeros()
         case "2":
-            num1 = float(input("Digite o valor do 1o número: "))
-            num2 = float(input("Digite o valor do 2o número: "))
-            print(f"Subtração = {num1 - num2}")
+            subtrair_dois_numeros()
+        case "3":
+            multiplicar_dois_numeros()
+        case "4":
+            dividir_dois_numeros()
         case _:
             print("Opção inválida, execute o programa novamente.")
+
+# sintaxe camelCase comun en JAva, JavaScript e C#
+# def somarDoisNumeros(num1, num2):
+
+# sintaxa snake_case comum em Python
+def somar_dois_numeros():
+    num1 = float(input("Digite o valor do 1o número: "))
+    num2 = float(input("Digite o valor do 2o número: "))
+    print(f"Soma = {num1 + num2}")
+
+def subtrair_dois_numeros():
+    num1 = float(input("Digite o valor do 1o número: "))
+    num2 = float(input("Digite o valor do 2o número: "))
+    print(f"Subtração = {num1 - num2}")
+
+def multiplicar_dois_numeros():
+    num1 = float(input("Digite o valor do 1o número: "))
+    num2 = float(input("Digite o valor do 2o número: "))
+    print(f"Multiplicação = {num1 * num2}")
+
+def dividir_dois_numeros():
+    num1 = float(input("Digite o valor do 1o número: "))
+    num2 = float(input("Digite o valor do 2o número: "))
+    if num2 == 0:
+        print("Divisão por zero não é permitida.")
+    else:
+        print(f"Divisão = {num1 / num2}")
 
 if __name__ == "__main__":
     main()
