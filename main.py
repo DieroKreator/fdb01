@@ -9,6 +9,9 @@ def main():
     print("############ MENU PRINCIPAL ############")
     print("1 - Soma de dois números")
     print("2 - Subtração de dois números")
+    print("3 - Multiplicação de dois números")
+    print("6 - Divisão de dois números (if/else)")
+    print("7 - Divisão de dois números (try/except)")
 
     opcao = input("Digite o número da opção desejada: ")   
 
