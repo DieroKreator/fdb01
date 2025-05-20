@@ -32,12 +32,12 @@ def main():
 
     match opcao:
         case "1":
-            num1 = int(input("Digite o valor do 1o número: "))
-            num2 = int(input("Digite o valor do 2o número: "))
+            num1 = float(input("Digite o valor do 1o número: "))
+            num2 = float(input("Digite o valor do 2o número: "))
             print(f"Soma = {num1 + num2}")
         case "2":
-            num1 = int(input("Digite o valor do 1o número: "))
-            num2 = int(input("Digite o valor do 2o número: "))
+            num1 = float(input("Digite o valor do 1o número: "))
+            num2 = float(input("Digite o valor do 2o número: "))
             print(f"Subtração = {num1 - num2}")
         case _:
             print("Opção inválida, execute o programa novamente.")
