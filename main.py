@@ -38,7 +38,7 @@ def main():
         case "3":
             multiplicar_dois_numeros()
         case "4":
-            dividir_dois_numeros()
+            dividir_dois_numeros_if_else()
         case _:
             print("Opção inválida, execute o programa novamente.")
 
@@ -61,13 +61,21 @@ def multiplicar_dois_numeros():
     num2 = float(input("Digite o valor do 2o número: "))
     print(f"Multiplicação = {num1 * num2}")
 
-def dividir_dois_numeros():
+def dividir_dois_numeros_if_else():
     num1 = float(input("Digite o valor do 1o número: "))
     num2 = float(input("Digite o valor do 2o número: "))
     if num2 == 0:
         print("Divisão por zero não é permitida.")
     else:
         print(f"Divisão = {num1 / num2}")
+
+def dividir_dois_numeros_try_except():
+    try:
+        num1 = float(input("Digite o valor do 1o número: "))
+        num2 = float(input("Digite o valor do 2o número: "))
+        print(f"Divisão = {num1 / num2}")
+    except ZeroDivisionError:
+        print("Divisão por zero não é permitida.")
 
 if __name__ == "__main__":
     main()
