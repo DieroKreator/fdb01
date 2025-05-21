@@ -1,4 +1,6 @@
 # Referencias a bibliotecas, archivos e frameworks
+
+import os
 import time
 
 # (Opcional) Classe
@@ -115,6 +117,8 @@ def contagem_regressiva():
     try:
         num = int(input("Contar a partir do número: "))
         for i in range(num, 0, -1):
+            # To Do: Limpar linha via system
+            os.system('cls' if os.name == 'nt' else 'clear')  # Limpa a tela 
             print(i, end=' ')
         # print()    # imprime uma nova linha
             time.sleep(1) # espera 1 segundo
