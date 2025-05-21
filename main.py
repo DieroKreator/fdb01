@@ -13,6 +13,7 @@ def main():
     print("4 - Divisão de dois números (if/else)")
     print("5 - Divisão de dois números (try/except)")
     print("6 - Contagem progressiva")
+    print("7 - Contagem regressiva")
 
     opcao = input("Digite o número da opção desejada: ")   
 
@@ -47,6 +48,8 @@ def main():
             dividir_dois_numeros_try_except()
         case "6":
             contagem_progressiva()
+        case "7":
+            contagem_regressiva()
         case _:
             print("Opção inválida, execute o programa novamente.")
 
@@ -107,6 +110,17 @@ def contagem_progressiva():
 
     except ValueError:
         print("Erro: Digite apenas números e sem parte decimal")
+
+def contagem_regressiva():
+    try:
+        num = int(input("Contar a partir do número: "))
+        for i in range(num, 0, -1):
+            print(i, end=' ')
+        print()    # imprime uma nova linha
+
+    except ValueError:
+        print("Erro: Digite apenas números e sem parte decimal")
+    
 
 if __name__ == "__main__":
     main()
