@@ -10,8 +10,9 @@ def main():
     print("1 - Soma de dois números")
     print("2 - Subtração de dois números")
     print("3 - Multiplicação de dois números")
-    print("6 - Divisão de dois números (if/else)")
-    print("7 - Divisão de dois números (try/except)")
+    print("4 - Divisão de dois números (if/else)")
+    print("5 - Divisão de dois números (try/except)")
+    print("6 - Contagem progressiva")
 
     opcao = input("Digite o número da opção desejada: ")   
 
@@ -42,6 +43,10 @@ def main():
             multiplicar_dois_numeros()
         case "4":
             dividir_dois_numeros_if_else()
+        case "5":
+            dividir_dois_numeros_try_except()
+        case "6":
+            contagem_progressiva()
         case _:
             print("Opção inválida, execute o programa novamente.")
 
@@ -50,19 +55,28 @@ def main():
 
 # sintaxa snake_case comum em Python
 def somar_dois_numeros():
-    num1 = float(input("Digite o valor do 1o número: "))
-    num2 = float(input("Digite o valor do 2o número: "))
-    print(f"Soma = {num1 + num2}")
+    try:
+        num1 = float(input("Digite o valor do 1o número: "))
+        num2 = float(input("Digite o valor do 2o número: "))
+        print(f"Soma = {num1 + num2}")
+    except ValueError:
+        print("Erro: Digite apenas números e use '.' para separar decimais.")
 
 def subtrair_dois_numeros():
-    num1 = float(input("Digite o valor do 1o número: "))
-    num2 = float(input("Digite o valor do 2o número: "))
-    print(f"Subtração = {num1 - num2}")
+    try:
+        num1 = float(input("Digite o valor do 1o número: "))
+        num2 = float(input("Digite o valor do 2o número: "))
+        print(f"Subtração = {num1 - num2}")
+    except ValueError:
+        print("Erro: Digite apenas números e use '.' para separar decimais.")
 
 def multiplicar_dois_numeros():
-    num1 = float(input("Digite o valor do 1o número: "))
-    num2 = float(input("Digite o valor do 2o número: "))
-    print(f"Multiplicação = {num1 * num2}")
+    try:
+        num1 = float(input("Digite o valor do 1o número: "))
+        num2 = float(input("Digite o valor do 2o número: "))
+        print(f"Multiplicação = {num1 * num2}")
+    except ValueError:
+        print("Erro: Digite apenas números e use '.' para separar decimais.")
 
 def dividir_dois_numeros_if_else():
     num1 = float(input("Digite o valor do 1o número: "))
@@ -79,8 +93,20 @@ def dividir_dois_numeros_try_except():
         print(f"Divisão = {num1 / num2}")
     except ZeroDivisionError:
         print("Divisão por zero não é permitida.")
+    except ValueError:
+        print("Erro: Digite apenas números e use '.' para separar decimais.")
     finally:
         print("Operação finalizada.")
+
+def contagem_progressiva():
+    try:
+        num = int(input("Contar até o número: "))
+        for i in range(num + 1):
+            print(i, end=' ')
+            print()    # imprime uma nova linha
+
+    except ValueError:
+        print("Erro: Digite apenas números e sem parte decimal")
 
 if __name__ == "__main__":
     main()
