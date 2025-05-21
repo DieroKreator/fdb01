@@ -79,6 +79,8 @@ def dividir_dois_numeros_try_except():
         print(f"Divisão = {num1 / num2}")
     except ZeroDivisionError:
         print("Divisão por zero não é permitida.")
+    finally:
+        print("Operação finalizada.")
 
 if __name__ == "__main__":
     main()
