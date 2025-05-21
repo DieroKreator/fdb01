@@ -1,5 +1,5 @@
 # Referencias a bibliotecas, archivos e frameworks
-
+import time
 
 # (Opcional) Classe
 
@@ -116,7 +116,8 @@ def contagem_regressiva():
         num = int(input("Contar a partir do número: "))
         for i in range(num, 0, -1):
             print(i, end=' ')
-        print()    # imprime uma nova linha
+        # print()    # imprime uma nova linha
+            time.sleep(1) # espera 1 segundo
 
     except ValueError:
         print("Erro: Digite apenas números e sem parte decimal")
