@@ -1,5 +1,6 @@
 # Referencias a bibliotecas, archivos e frameworks
 
+import datetime
 import os
 import time
 
@@ -16,6 +17,7 @@ def main():
     print("5 - Divisão de dois números (try/except)")
     print("6 - Contagem progressiva")
     print("7 - Contagem regressiva")
+    print("8 - Consultar data e hora")
 
     opcao = input("Digite o número da opção desejada: ")   
 
@@ -52,6 +54,8 @@ def main():
             contagem_progressiva()
         case "7":
             contagem_regressiva()
+        case "8":
+            consultar_data_hora() 
         case _:
             print("Opção inválida, execute o programa novamente.")
 
@@ -116,15 +120,20 @@ def contagem_progressiva():
 def contagem_regressiva():
     try:
         num = int(input("Contar a partir do número: "))
-        for i in range(num, 0, -1):
+        for i in range(num, -1, -1):
             # To Do: Limpar linha via system
             os.system('cls' if os.name == 'nt' else 'clear')  # Limpa a tela 
             print(i, end=' ')
+            # print()
         # print()    # imprime uma nova linha
             time.sleep(1) # espera 1 segundo
 
     except ValueError:
         print("Erro: Digite apenas números e sem parte decimal")
+
+def consultar_data_hora():
+    agora = datetime.datetime.now()
+    print(f"Data e hora atual: {agora.strftime('%Y-%m-%d %H:%M:%S')}")
     
 
 if __name__ == "__main__":
