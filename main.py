@@ -133,8 +133,7 @@ def contagem_regressiva():
 
 def consultar_data_hora():
     agora = datetime.datetime.now()
-    print(f"Data e hora atual: {agora.strftime('%Y-%m-%d %H:%M:%S')}")
-    
+    print(f"Data e hora atual: {agora.strftime('%d/%m/%Y, %H:%M:%S')}")   
 
 if __name__ == "__main__":
     main()
