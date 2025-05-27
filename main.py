@@ -163,7 +163,7 @@ def calcular_area_do_retangulo():
     except ValueError:
         print("Erro: Digite apenas números e use '.' para separar decimais.")
 
-def calcular_area_do_triangulo(base, altura):
+def calcular_area_do_triangulo():
     try:
         base = float(input("Digite o comprimento da base do triângulo: "))
         altura = float(input("Digite o comprimento da altura do triângulo: "))
@@ -171,7 +171,7 @@ def calcular_area_do_triangulo(base, altura):
     except ValueError:
         print("Erro: Digite apenas números e use '.' para separar decimais.")
 
-def calcular_area_do_circulo(raio):
+def calcular_area_do_circulo():
     try:
         raio = float(input("Digite o comprimento do raio do círculo: "))
         area = math.pi * (raio ** 2)
