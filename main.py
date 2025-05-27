@@ -1,6 +1,7 @@
 # Referencias a bibliotecas, archivos e frameworks
 
 import datetime
+import math
 import os
 import time
 
@@ -137,3 +138,37 @@ def consultar_data_hora():
 
 if __name__ == "__main__":
     main()
+
+def calcular_area_do_quadrado(lado):
+    """
+    Calcula a área de um quadrado dado o comprimento do lado.
+    :param lado: Comprimento do lado do quadrado.
+    :return: Área do quadrado.
+    """
+    return lado ** 2
+
+def calcular_area_do_retangulo(base, altura):
+    """
+    Calcula a área de um retângulo dado a base e a altura.
+    :param base: Comprimento da base do retângulo.
+    :param altura: Altura do retângulo.
+    :return: Área do retângulo.
+    """
+    return base * altura
+
+def calcular_area_do_triangulo(base, altura):
+    """
+    Calcula a área de um triângulo dado a base e a altura.
+    :param base: Comprimento da base do triângulo.
+    :param altura: Altura do triângulo.
+    :return: Área do triângulo.
+    """
+    return (base * altura) / 2
+
+def calcular_area_do_circulo(raio):
+    """
+    Calcula a área de um círculo dado o raio.
+    :param raio: Raio do círculo.
+    :return: Área do círculo.
+    """
+    return math.pi * (raio ** 2)
