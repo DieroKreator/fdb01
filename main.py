@@ -19,6 +19,10 @@ def main():
     print("6 - Contagem progressiva")
     print("7 - Contagem regressiva")
     print("8 - Consultar data e hora")
+    print("9 - Calcular área do quadrado")
+    print("10 - Calcular área do retângulo")
+    print("11 - Calcular área do triângulo")
+    print("12 - Calcular área do círculo")
 
     opcao = input("Digite o número da opção desejada: ")   
 
@@ -57,6 +61,14 @@ def main():
             contagem_regressiva()
         case "8":
             consultar_data_hora() 
+        case "9":
+            calcular_area_do_quadrado()
+        case "10":
+            calcular_area_do_retangulo()
+        case "11":
+            calcular_area_do_triangulo()
+        case "12":
+            calcular_area_do_circulo()
         case _:
             print("Opção inválida, execute o programa novamente.")
 
