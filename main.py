@@ -146,41 +146,38 @@ def contagem_regressiva():
 
 def consultar_data_hora():
     agora = datetime.datetime.now()
-    print(f"Data e hora atual: {agora.strftime('%d/%m/%Y, %H:%M:%S')}")   
+    print(f"Data e hora atual: {agora.strftime('%d/%m/%Y, %H:%M:%S')}")
+
+def calcular_area_do_quadrado():
+    try:
+        lado = float(input("Digite o comprimento do lado do quadrado: "))
+        print(f"Área do quadrado = {lado ** 2}")
+    except ValueError:
+        print("Erro: Digite apenas números e use '.' para separar decimais.")
+
+def calcular_area_do_retangulo():
+    try:
+        base = float(input("Digite o comprimento da base do retângulo: "))
+        altura = float(input("Digite o comprimento da altura do retângulo: "))
+        print(f"Área do retângulo = {base * altura}")
+    except ValueError:
+        print("Erro: Digite apenas números e use '.' para separar decimais.")
+
+def calcular_area_do_triangulo(base, altura):
+    try:
+        base = float(input("Digite o comprimento da base do triângulo: "))
+        altura = float(input("Digite o comprimento da altura do triângulo: "))
+        print(f"Área do triângulo = {0.5 * base * altura}")
+    except ValueError:
+        print("Erro: Digite apenas números e use '.' para separar decimais.")
+
+def calcular_area_do_circulo(raio):
+    try:
+        raio = float(input("Digite o comprimento do raio do círculo: "))
+        area = math.pi * (raio ** 2)
+        print(f"Área do círculo = {area:.2f}")
+    except ValueError:
+        print("Erro: Digite apenas números e use '.' para separar decimais.") 
 
 if __name__ == "__main__":
     main()
-
-def calcular_area_do_quadrado(lado):
-    """
-    Calcula a área de um quadrado dado o comprimento do lado.
-    :param lado: Comprimento do lado do quadrado.
-    :return: Área do quadrado.
-    """
-    return lado ** 2
-
-def calcular_area_do_retangulo(base, altura):
-    """
-    Calcula a área de um retângulo dado a base e a altura.
-    :param base: Comprimento da base do retângulo.
-    :param altura: Altura do retângulo.
-    :return: Área do retângulo.
-    """
-    return base * altura
-
-def calcular_area_do_triangulo(base, altura):
-    """
-    Calcula a área de um triângulo dado a base e a altura.
-    :param base: Comprimento da base do triângulo.
-    :param altura: Altura do triângulo.
-    :return: Área do triângulo.
-    """
-    return (base * altura) / 2
-
-def calcular_area_do_circulo(raio):
-    """
-    Calcula a área de um círculo dado o raio.
-    :param raio: Raio do círculo.
-    :return: Área do círculo.
-    """
-    return math.pi * (raio ** 2)
