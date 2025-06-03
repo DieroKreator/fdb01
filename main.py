@@ -23,6 +23,9 @@ def main():
     print("10 - Calcular área do retângulo")
     print("11 - Calcular área do triângulo")
     print("12 - Calcular área do círculo")
+    print("13 - Consultar data")
+    print("14 - Consultar hora militar")
+    print("15 - Consultar hora")
 
     opcao = input("Digite o número da opção desejada: ")   
 
@@ -69,6 +72,12 @@ def main():
             calcular_area_do_triangulo()
         case "12":
             calcular_area_do_circulo()
+        case "13":
+            consultar_data()
+        case "14":
+            consultar_hora_militar()
+        case "15":
+            consultar_hora()
         case _:
             print("Opção inválida, execute o programa novamente.")
 
@@ -178,6 +187,18 @@ def calcular_area_do_circulo():
         print(f"Área do círculo = {area:.2f}")
     except ValueError:
         print("Erro: Digite apenas números e use '.' para separar decimais.") 
+
+def consultar_data():
+    agora = datetime.datetime.now()
+    print(f"Data atual: {agora.strftime('%d de %B de %Y')}")
+
+def consultar_hora_militar():
+    agora = datetime.datetime.now()
+    print(f"Hora atual: {agora.strftime('%H:%M')}")
+
+def consultar_hora():
+    agora = datetime.datetime.now()
+    print(f"Hora atual: {agora.strftime('%I:%M %p')}")  # Formato 12 horas
 
 if __name__ == "__main__":
     main()
