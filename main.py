@@ -211,8 +211,11 @@ def sobre_datas():
     if int(sua_data_convertida.strftime("%Y")) == int(agora.strftime("%Y")):
         print(f"Data digitada é o {sua_data_convertida.strftime('%j')} dia do ano")
         print(f"Data atual é o {agora.strftime('%j')} dia do ano")
-        dias_transcorridos = int(agora.strftime("%j")) - int(sua_data_convertida.strftime("%j"))
-        print(f'Já se passaram {dias_transcorridos} dias')
+        if int(sua_data_convertida.strftime("%j")) < int(agora.strftime("%Y")):
+            dias_transcorridos = int(agora.strftime("%j")) - int(sua_data_convertida.strftime("%j"))
+            print(f'Já se passaram {dias_transcorridos} dias')
+        else: # data digitada está no futuro
+            dias_faltando = int(sua_data_convertida.strftime("%j")) - int(agora.strftime("%j"))
     else:
         print("A data digitada não é do ano atual.")
 
