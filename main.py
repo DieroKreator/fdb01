@@ -1,6 +1,6 @@
 # Referencias a bibliotecas, archivos e frameworks
 
-import datetime
+from datetime import datetime
 import math
 import os
 import time
@@ -26,6 +26,7 @@ def main():
     print("13 - Consultar data")
     print("14 - Consultar hora militar")
     print("15 - Consultar hora")
+    print("16 - Sobre datas")
 
     opcao = input("Digite o número da opção desejada: ")   
 
@@ -78,6 +79,8 @@ def main():
             consultar_hora_militar()
         case "15":
             consultar_hora()
+        case "16":
+            sobre_datas()
         case _:
             print("Opção inválida, execute o programa novamente.")
 
@@ -189,16 +192,22 @@ def calcular_area_do_circulo():
         print("Erro: Digite apenas números e use '.' para separar decimais.") 
 
 def consultar_data():
-    agora = datetime.datetime.now()
+    agora = datetime.now()
     print(f"Data atual: {agora.strftime('%d de %B de %Y')}")
 
 def consultar_hora_militar():
-    agora = datetime.datetime.now()
+    agora = datetime.now()
     print(f"Hora atual: {agora.strftime('%H:%M')}")
 
 def consultar_hora():
-    agora = datetime.datetime.now()
+    agora = datetime.now()
     print(f"Hora atual: {agora.strftime('%I:%M %p')}")  # Formato 12 horas
+
+def sobre_datas():
+    sua_data = input('Digite uma data no formato dd/mm/aaaa: ')
+    agora = datetime.now()
+    dias_transcorridos = agora.strftime("%j") - datetime.strptime(sua_data, "%j")
+    print(f'Já se passaram {dias_transcorridos} dias desde {sua_data}.')
 
 if __name__ == "__main__":
     main()
