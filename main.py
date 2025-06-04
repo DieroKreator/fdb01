@@ -205,9 +205,16 @@ def consultar_hora():
 
 def sobre_datas():
     sua_data = input('Digite uma data no formato dd/mm/aaaa: ')
+    sua_data_convertida = datetime.strptime(sua_data, "%d/%m/%Y")
     agora = datetime.now()
-    dias_transcorridos = agora.strftime("%j") - datetime.strptime(sua_data, "%j")
-    print(f'Já se passaram {dias_transcorridos} dias desde {sua_data}.')
+    
+    if int(sua_data_convertida.strftime("%Y")) == int(agora.strftime("%Y")):
+        print(f"Data digitada é o {sua_data_convertida.strftime('%j')} dia do ano")
+        print(f"Data atual é o {agora.strftime('%j')} dia do ano")
+        dias_transcorridos = int(agora.strftime("%j")) - int(sua_data_convertida.strftime("%j"))
+        print(f'Já se passaram {dias_transcorridos} dias')
+    else:
+        print("A data digitada não é do ano atual.")
 
 if __name__ == "__main__":
     main()
