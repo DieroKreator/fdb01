@@ -27,6 +27,7 @@ def main():
     print("14 - Consultar hora militar")
     print("15 - Consultar hora")
     print("16 - Sobre datas")
+    print("17 - Días entre datas")
 
     opcao = input("Digite o número da opção desejada: ")   
 
@@ -81,6 +82,8 @@ def main():
             consultar_hora()
         case "16":
             sobre_datas()
+        case "17":
+            dias_entre_datas()
         case _:
             print("Opção inválida, execute o programa novamente.")
 
@@ -222,6 +225,10 @@ def sobre_datas():
             print(f'Faltam {dias_faltando} dias para a data digitada')
     else:
         print("Tente novamente, utilize uma data do ano atual.")
+
+def dias_entre_datas():
+    data1 = input("Digite a 1ª data (dd/mm/aaaa): ")
+    data2 = input("Digite a 2ª data (dd/mm/aaaa): ")
 
 if __name__ == "__main__":
     main()
