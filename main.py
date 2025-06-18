@@ -218,6 +218,8 @@ def sobre_datas():
             print(f'Já se passaram {dias_transcorridos} dias desde a data digitada')
         else:
             print("A data digitada está no futuro")
+            dias_faltando = int(sua_data_convertida.strftime("%j")) - int(agora.strftime("%j"))
+            print(f'Faltam {dias_faltando} dias para a data digitada')
     else:
         print("Tente novamente, utilize uma data do ano atual.")
 
