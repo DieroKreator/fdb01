@@ -2,8 +2,8 @@
 
 from datetime import datetime
 import math
-import os
 import time
+import os
 
 # (Opcional) Classe
 
@@ -207,18 +207,33 @@ def sobre_datas():
     sua_data = input('Digite uma data no formato dd/mm/aaaa: ')
     sua_data_convertida = datetime.strptime(sua_data, "%d/%m/%Y")
     agora = datetime.now()
-    
+
     if int(sua_data_convertida.strftime("%Y")) == int(agora.strftime("%Y")):
-        print(f"Data digitada é o {sua_data_convertida.strftime('%j')} dia do ano")
-        print(f"Data atual é o {agora.strftime('%j')} dia do ano")
-        if int(sua_data_convertida.strftime("%j")) < int(agora.strftime("%Y")):
+        print(f"Data digitada: {sua_data_convertida.strftime('%d/%m/%Y')} é o {sua_data_convertida.strftime('%j')} dia do ano")
+        print(f"Data atual: {agora.strftime('%d/%m/%Y')} é o {agora.strftime('%j')} dia do ano")
+
+        if int(sua_data_convertida < agora):
+            print("A data digitada está no passado.")
             dias_transcorridos = int(agora.strftime("%j")) - int(sua_data_convertida.strftime("%j"))
-            print(f'Já se passaram {dias_transcorridos} dias')
-        else: # data digitada está no futuro
-            dias_faltando = int(sua_data_convertida.strftime("%j")) - int(agora.strftime("%j"))
-            print(f'Faltam {dias_faltando} dias para a data digitada')
+            print(f'Já se passaram {dias_transcorridos} dias desde a data digitada')
+        else:
+            print("A data digitada está no futuro")
     else:
-        print("A data digitada não é do ano atual.")
+        print("Tente novamente, utilize uma data do ano atual.")
+
+
+    
+    # if int(sua_data_convertida.strftime("%Y")) == int(agora.strftime("%Y")):
+    #     print(f"Data digitada é o {sua_data_convertida.strftime('%j')} dia do ano")
+    #     print(f"Data atual é o {agora.strftime('%j')} dia do ano")
+    #     if int(sua_data_convertida.strftime("%j")) < int(agora.strftime("%Y")):
+    #         dias_transcorridos = int(agora.strftime("%j")) - int(sua_data_convertida.strftime("%j"))
+    #         print(f'Já se passaram {dias_transcorridos} dias')
+    #     else: # data digitada está no futuro
+    #         dias_faltando = int(sua_data_convertida.strftime("%j")) - int(agora.strftime("%j"))
+    #         print(f'Faltam {dias_faltando} dias para a data digitada')
+    # else:
+    #     print("A data digitada não é do ano atual.")
 
 if __name__ == "__main__":
     main()
