@@ -230,5 +230,11 @@ def dias_entre_datas():
     data1 = input("Digite a 1ª data (dd/mm/aaaa): ")
     data2 = input("Digite a 2ª data (dd/mm/aaaa): ")
 
+    data1_convertida = datetime.strptime(data1, "%d/%m/%Y")
+    data2_convertida = datetime.strptime(data2, "%d/%m/%Y")
+
+    diferenca = abs((data2_convertida - data1_convertida).days)
+    print(f"A diferença entre as datas é de {diferenca} dias.")
+
 if __name__ == "__main__":
     main()
