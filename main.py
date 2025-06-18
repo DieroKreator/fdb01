@@ -28,6 +28,7 @@ def main():
     print("15 - Consultar hora")
     print("16 - Sobre datas")
     print("17 - Días entre datas")
+    print("18 - Calcular semanas que eu vivi")
 
     opcao = input("Digite o número da opção desejada: ")   
 
@@ -84,6 +85,8 @@ def main():
             sobre_datas()
         case "17":
             dias_entre_datas()
+        case "18":
+            semanas_vividas()
         case _:
             print("Opção inválida, execute o programa novamente.")
 
@@ -235,6 +238,8 @@ def dias_entre_datas():
 
     diferenca = abs((data2_convertida - data1_convertida).days)
     print(f"A diferença entre as datas é de {diferenca} dias.")
+
+def semanas_vividas():
 
 if __name__ == "__main__":
     main()
