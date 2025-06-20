@@ -253,5 +253,20 @@ def semanas_vividas():
 
 def ordenar_vetor():
 
+    # Vetor é uma lista de valores
+
+    print("Ordenacao de Vetor")
+    try:
+        entrada = input("Digite os números separados por vírgula: ")
+        vetor = [int(elemento.strip()) for elemento in entrada.split(',')]
+        print(f"Vetor original: {vetor}")
+        vetor.sort()
+        print(f"Vetor ordenado (crescente): {vetor}")
+        vetor.sort(reverse=True)
+        print(f"Vetor ordenado (decrescente): {vetor}")
+    except ValueError:
+        print("Erro: Digite apenas números inteiros separados por vírgula.")
+    input("\nPressione Enter para continuar...")
+
 if __name__ == "__main__":
     main()
