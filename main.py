@@ -29,6 +29,7 @@ def main():
     print("16 - Sobre datas")
     print("17 - Días entre datas")
     print("18 - Calcular semanas que eu vivi")
+    print("19 - Ordenar vetor")
 
     opcao = input("Digite o número da opção desejada: ")   
 
@@ -87,6 +88,8 @@ def main():
             dias_entre_datas()
         case "18":
             semanas_vividas()
+        case "19":
+            ordenar_vetor()
         case _:
             print("Opção inválida, execute o programa novamente.")
 
@@ -240,6 +243,15 @@ def dias_entre_datas():
     print(f"A diferença entre as datas é de {diferenca} dias.")
 
 def semanas_vividas():
+    data_nascimento = input("Digite sua data de nascimento (dd/mm/aaaa): ")
+    data_nascimento_convertida = datetime.strptime(data_nascimento, "%d/%m/%Y")
+    hoje = datetime.now()
+
+    diferenca = hoje - data_nascimento_convertida
+    semanas_vividas = diferenca.days // 7
+    print(f"Você viveu aproximadamente {semanas_vividas} semanas.")
+
+def ordenar_vetor():
 
 if __name__ == "__main__":
     main()
